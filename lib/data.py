@@ -99,7 +99,7 @@ def get_split_dataset(dset_name, batch_size, n_worker, val_size, data_root='../d
             transforms.ToTensor(),
             transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
         ])
-        trainset = torchvision.datasets.CIFAR100(root=data_root, train=True, download=True, transform=transform_train)
+        trainset = torchvision.datasets.CIFAR10(root=data_root, train=True, download=True, transform=transform_train)
         if use_real_val:  # split the actual val set
             valset = torchvision.datasets.CIFAR10(root=data_root, train=False, download=True, transform=transform_test)
             n_val = len(valset)
